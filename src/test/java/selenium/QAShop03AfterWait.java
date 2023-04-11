@@ -142,7 +142,7 @@ public class QAShop03AfterWait {
 
         QALogout();
 
-        WebElement login = driver.findElement(By.linkText("로그인"));
+        WebElement login = findElementAfterWait(By.linkText("로그인"));
 
         Assertions.assertEquals("로그인", login.getText());
     }
@@ -152,6 +152,20 @@ public class QAShop03AfterWait {
     @Test
     @Order(3)
     void SearchTest() {
+        String searchText = "두부";
+
+        qASearch(searchText);
+
+        int resultCount = getSearchResultCount();
+
+        System.out.println(searchText + " 검색결과 : " + resultCount);
+
+        Assertions.assertTrue(resultCount > 1);
+
+    }
+
+    @Test
+    void SearchTestEmployee() {
         String searchText = "두부";
 
         qASearch(searchText);

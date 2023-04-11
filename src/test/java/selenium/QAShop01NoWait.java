@@ -107,7 +107,6 @@ public class QAShop01NoWait {
     void LoginTest() {
         QALogin();
 
-
         String username = getStringByClassID("username");
         Assertions.assertEquals("김정은", username);
 
