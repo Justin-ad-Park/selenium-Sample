@@ -16,6 +16,8 @@ import java.util.concurrent.TimeUnit;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class QAShop03AfterWait {
+    public static final int WIDTH = 1278;
+    public static final int HEIGHT = 1448;
     private static WebDriver driver;
     private static Map<String, Object> vars;
     private static JavascriptExecutor js;
@@ -88,14 +90,16 @@ public class QAShop03AfterWait {
 
     public void QALogout() {
         driver.get("https://qashop.pulmuone.online/");
-        driver.manage().window().setSize(new Dimension(1278, 1448));
+        driver.manage().window().setSize(new Dimension(WIDTH, HEIGHT));
 
         findElementAfterWait(By.linkText("로그아웃")).click();
     }
 
     public void QALogin() {
+        String qapwd = System.getenv("QAPWD");
+
         driver.get("https://qashop.pulmuone.online/");
-        driver.manage().window().setSize(new Dimension(1278, 1448));
+        driver.manage().window().setSize(new Dimension(WIDTH, HEIGHT));
 
         findElementAfterWait(By.linkText("로그인")).click();
 
@@ -103,13 +107,13 @@ public class QAShop03AfterWait {
         findElementAfterWait(By.cssSelector(".fb__input-text > .fb__input-text__inner > input")).click();
         findElementAfterWait(By.cssSelector(".fb__input-text > .fb__input-text__inner > input")).sendKeys("sk11sk");
         findElementAfterWait(By.cssSelector("div > .fb__input-text__inner > input")).click();
-        findElementAfterWait(By.cssSelector("div > .fb__input-text__inner > input")).sendKeys("vnfandnjs1");
+        findElementAfterWait(By.cssSelector("div > .fb__input-text__inner > input")).sendKeys(qapwd);
         findElementAfterWait(By.cssSelector("div > .fb__input-text__inner > input")).sendKeys(Keys.ENTER);
     }
 
     public void qASearch(String searchText) {
         driver.get("https://qashop.pulmuone.online/");
-        driver.manage().window().setSize(new Dimension(1536, 960));
+        driver.manage().window().setSize(new Dimension(WIDTH, HEIGHT));
 
         findElementAfterWait(By.cssSelector(".fb__input-text__inner > input")).click();
         findElementAfterWait(By.cssSelector(".fb__input-text__inner > input")).sendKeys(searchText);

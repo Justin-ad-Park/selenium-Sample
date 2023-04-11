@@ -14,6 +14,8 @@ import java.util.concurrent.TimeUnit;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class QAShop02AddWait {
+    public static final int WIDTH = 1278;
+    public static final int HEIGHT = 1448;
     private static WebDriver driver;
     private static Map<String, Object> vars;
     private static JavascriptExecutor js;
@@ -67,13 +69,15 @@ public class QAShop02AddWait {
 
     public void QALogout() {
         driver.get("https://qashop.pulmuone.online/");
-        driver.manage().window().setSize(new Dimension(1278, 1448));
+        driver.manage().window().setSize(new Dimension(WIDTH, HEIGHT));
         driver.findElement(By.linkText("로그아웃")).click();
     }
 
     public void QALogin() {
+        String qapwd = System.getenv("QAPWD");
+
         driver.get("https://qashop.pulmuone.online/");
-        driver.manage().window().setSize(new Dimension(1278, 1448));
+        driver.manage().window().setSize(new Dimension(WIDTH, HEIGHT));
 
         sleep(500);
         driver.findElement(By.linkText("로그인")).click();
@@ -83,13 +87,13 @@ public class QAShop02AddWait {
         driver.findElement(By.cssSelector(".fb__input-text > .fb__input-text__inner > input")).click();
         driver.findElement(By.cssSelector(".fb__input-text > .fb__input-text__inner > input")).sendKeys("sk11sk");
         driver.findElement(By.cssSelector("div > .fb__input-text__inner > input")).click();
-        driver.findElement(By.cssSelector("div > .fb__input-text__inner > input")).sendKeys("vnfandnjs1");
+        driver.findElement(By.cssSelector("div > .fb__input-text__inner > input")).sendKeys(qapwd);
         driver.findElement(By.cssSelector("div > .fb__input-text__inner > input")).sendKeys(Keys.ENTER);
     }
 
     public void qASearch(String searchText) {
         driver.get("https://qashop.pulmuone.online/");
-        driver.manage().window().setSize(new Dimension(1278, 1448));
+        driver.manage().window().setSize(new Dimension(WIDTH, HEIGHT));
         sleep(500L);
         driver.findElement(By.cssSelector(".fb__input-text__inner > input")).click();
         sleep(1000L);
