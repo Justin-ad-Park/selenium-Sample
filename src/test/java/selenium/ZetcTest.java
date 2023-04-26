@@ -2,7 +2,7 @@ package selenium;
 
 import org.junit.jupiter.api.Test;
 
-public class EtcTest {
+public class ZetcTest {
 
     @Test
     void Test() {
