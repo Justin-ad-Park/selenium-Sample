@@ -18,11 +18,12 @@ import java.util.concurrent.TimeUnit;
 public class QAShop03AfterWait {
     public static final int WIDTH = 1278;
     public static final int HEIGHT = 1448;
+    public static final String HTTPS_QASHOP_PULMUONE_ONLINE = "https://qashop.pulmuone.online/";
     private static WebDriver driver;
     private static Map<String, Object> vars;
-    private static JavascriptExecutor js;
     private static int DEFAULT_WAITSECONDS_FOR_ELEMENT = 3;
     private static Stopwatch stopwatch;
+    private static JavascriptExecutor js;
 
 
     @BeforeAll
@@ -87,19 +88,26 @@ public class QAShop03AfterWait {
         return textElement.getText();
     }
 
+    /**
+     * 드라이버 준비
+     * @param url 테스트 시작 페이지 URL
+     */
+    private void initDriver(String url) {
+        driver.get(url);
+        driver.manage().window().setSize(new Dimension(WIDTH, HEIGHT));
+    }
+
 
     public void QALogout() {
-        driver.get("https://qashop.pulmuone.online/");
-        driver.manage().window().setSize(new Dimension(WIDTH, HEIGHT));
+        initDriver(HTTPS_QASHOP_PULMUONE_ONLINE);
 
         findElementAfterWait(By.linkText("로그아웃")).click();
     }
 
-    public void QALogin() {
+    public String QALogin() {
         String qapwd = System.getenv("QAPWD");
 
-        driver.get("https://qashop.pulmuone.online/");
-        driver.manage().window().setSize(new Dimension(WIDTH, HEIGHT));
+        initDriver("https://qashop.pulmuone.online/");
 
         findElementAfterWait(By.linkText("로그인")).click();
 
@@ -109,17 +117,24 @@ public class QAShop03AfterWait {
         findElementAfterWait(By.cssSelector("div > .fb__input-text__inner > input")).click();
         findElementAfterWait(By.cssSelector("div > .fb__input-text__inner > input")).sendKeys(qapwd);
         findElementAfterWait(By.cssSelector("div > .fb__input-text__inner > input")).sendKeys(Keys.ENTER);
+
+        String username = getStringByClassID("username");
+
+        return username;
     }
 
     public void qASearch(String searchText) {
-        driver.get("https://qashop.pulmuone.online/");
-        driver.manage().window().setSize(new Dimension(WIDTH, HEIGHT));
+        initDriver("https://qashop.pulmuone.online/");
 
         findElementAfterWait(By.cssSelector(".fb__input-text__inner > input")).click();
         findElementAfterWait(By.cssSelector(".fb__input-text__inner > input")).sendKeys(searchText);
         findElementAfterWait(By.cssSelector(".fb__input-text__inner > input")).sendKeys(Keys.ENTER);
     }
 
+    /**
+     * 검색 결과로 나온 상품수를 확인한다.
+     * @return 검색결과수
+     */
     private int getSearchResultCount() {
         String resultCount = getStringByClassID("fb__tabs__count");
 
@@ -128,17 +143,16 @@ public class QAShop03AfterWait {
 
     @Test
     @Order(1)
-    void LoginTest() {
-        QALogin();
+    void 로그인_테스트() {
+        String username = QALogin();
 
-        String username = getStringByClassID("username");
         Assertions.assertEquals("김정은", username);
 
     }
 
     @Test
     @Order(2)
-    void LogoutTest() {
+    void 로그아웃_테스트() {
 
         QALogout();
 
@@ -151,7 +165,7 @@ public class QAShop03AfterWait {
 
     @Test
     @Order(3)
-    void SearchTest() {
+    void 비로그인_검색_테스트() {
         String searchText = "두부";
 
         qASearch(searchText);
@@ -166,6 +180,8 @@ public class QAShop03AfterWait {
 
     @Test
     void SearchTestEmployee() {
+        QALogin();
+
         String searchText = "두부";
 
         qASearch(searchText);
@@ -178,4 +194,17 @@ public class QAShop03AfterWait {
 
     }
 
+    @Test
+    void 로그인후검색테스트() {
+        QALogin();
+
+        qASearch("말똥구리");
+
+        int resultCount = getSearchResultCount();
+
+        System.out.println( " 검색결과 : " + resultCount);
+
+        Assertions.assertTrue(resultCount == 0);
+
+    }
 }
