@@ -2,7 +2,7 @@
 spring:
   profiles:
     active:
-      - qa
+      - canshop
     group:
       qa:
         - common

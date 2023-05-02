@@ -5,22 +5,22 @@ import org.openqa.selenium.*;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.test.context.SpringBootTest;
 import selenium.SeleniumApplication;
-import selenium.constants.FrontConstants;
 import selenium.support.SeleniumSupporter;
 
+//@ActiveProfiles("qa")
 @SpringBootTest(classes = SeleniumApplication.class)
 @EnableAutoConfiguration
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class TAMemberLogin extends SeleniumSupporter {
 
     public void QALogout() {
-        initDriver(SHOP_FRONT_URL);
+        openWebPage();
 
         findElementAfterWait(By.linkText("로그아웃")).click();
     }
 
     public void QALogin() {
-        initDriver(SHOP_FRONT_URL);
+        openWebPage();
 
         String qapwd = System.getenv("QAPWD");
         findElementAfterWait(By.linkText("로그인")).click();

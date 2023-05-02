@@ -8,17 +8,18 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.ActiveProfiles;
 import selenium.SeleniumApplication;
-import selenium.constants.FrontConstants;
 import selenium.member.login.TAMemberLogin;
 import selenium.support.SeleniumSupporter;
 
+@ActiveProfiles("qa")
 @SpringBootTest(classes = SeleniumApplication.class)
 @EnableAutoConfiguration
 public class TMSearch extends SeleniumSupporter {
 
     public static void qASearch(String searchText) {
-        initDriver(SHOP_FRONT_URL);
+        openWebPage();
 
         findElementAfterWait(By.cssSelector(".fb__input-text__inner > input")).click();
         findElementAfterWait(By.cssSelector(".fb__input-text__inner > input")).sendKeys(searchText);

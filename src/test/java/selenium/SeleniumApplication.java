@@ -4,7 +4,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
 
-// @ActiveProfiles("qa")
+@ActiveProfiles("canary")
 @SpringBootTest
 public class SeleniumApplication {
 
