@@ -1,4 +1,4 @@
-package selenium;
+package testsample;
 
 import com.google.common.base.Stopwatch;
 import org.junit.jupiter.api.*;
