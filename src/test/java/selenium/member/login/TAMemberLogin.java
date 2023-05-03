@@ -4,10 +4,11 @@ import org.junit.jupiter.api.*;
 import org.openqa.selenium.*;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.ActiveProfiles;
 import selenium.SeleniumApplication;
 import selenium.support.SeleniumSupporter;
 
-//@ActiveProfiles("qa")
+@ActiveProfiles("qa")
 @SpringBootTest(classes = SeleniumApplication.class)
 @EnableAutoConfiguration
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)

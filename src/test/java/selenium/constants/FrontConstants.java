@@ -1,8 +1,7 @@
 package selenium.constants;
 
-import org.springframework.stereotype.Component;
+import org.springframework.boot.context.properties.ConfigurationProperties;
 
-@Component
 public class FrontConstants {
 
 

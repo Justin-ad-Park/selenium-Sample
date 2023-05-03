@@ -1,9 +1,8 @@
-# local 환경
 spring:
   profiles:
     active:
-      - canshop
-    group:
+      - qa   # 테스트 환경 선택
+    group:  # 테스트 환경 선택
       qa:
         - common
         - qashop
@@ -11,7 +10,7 @@ spring:
         - common
         - canshop
 
----
+--- # 공통 프로퍼티 선언부
 spring:
   config:
     activate:
@@ -40,6 +39,7 @@ spring:
       on-profile: "qashop"
 shop:
   front-url: "https://qashop.pulmuone.online/"
+  etcvalue: 123,456,789
 
 --- #canshop 설정
 spring:
@@ -48,8 +48,7 @@ spring:
       on-profile: "canshop"
 shop:
   front-url: "https://canshop.pulmuone.online/"
-
-
+  etcvalue: 123,456,789
 #  sql:
 #    init:
 #      mode: always

@@ -19,6 +19,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
+//@ActiveProfiles("qa")
 @SpringBootTest(classes = {SeleniumApplication.class} )
 @EnableAutoConfiguration
 public class SeleniumSupporter {
