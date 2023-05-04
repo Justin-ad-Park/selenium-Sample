@@ -1,3 +1,16 @@
+# 개발 환경 구성
+## java, git, intellij 설치
+### 1. java 설치
++ https://www.oracle.com/java/technologies/downloads/
++ 위 페이지에서 자신의 OS에 맞는 최신 버전 설치
+
+### 2. git 설치 (소스코드 관리 도구)
++ https://www.lainyzine.com/ko/article/how-to-install-latest-version-of-git-on-windows-10/
+
+
+
+
+
 # Selenium 개발 방법
 
 ## 1. 프로퍼티를 등록하는 방법
