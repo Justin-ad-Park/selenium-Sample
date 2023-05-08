@@ -3,16 +3,28 @@
 ### 1. java 설치
 + https://www.oracle.com/java/technologies/downloads/
 + 위 페이지에서 자신의 OS에 맞는 최신 버전 설치
++ IntelliJ - Project Structure - Project SDK - Add SDK를 통해 설치해도 됨. JDK 16 설치 권고
 
 ### 2. git 설치 (소스코드 관리 도구)
 + https://www.lainyzine.com/ko/article/how-to-install-latest-version-of-git-on-windows-10/
 
+### 3. 셀레늄 웹 드라이버 설치 
+https://justinadpark.tistory.com/173
 
+### 4. 본 프로젝트를 각자 PC에 clone(복제) 
++ windows 기준
+    - 프로젝트를 관리할 폴더 생성
+    - Windows + R 엔터
+    - cmd 엔터
+    - cd {위에서 만든 폴더}
+    - clone https://github.com/Justin-ad-Park/selenium-Sample.git
 
+### 5. QAPWD를 시스템 환경설정에 추가 
+    + 추가 방법은 path 설정 방식과 동일
+    + QAPWD 변수값에 비밀번호 등록
 
 
 # Selenium 개발 방법
-
 ## 1. 프로퍼티를 등록하는 방법
 + 셀레늄 테스트 프로퍼티란? 테스트에 사용되는 값으로 자주 사용되며, 테스트 상황에 따라 변경 가능성이 있는 값
 + application.yml 에  프로퍼티 등록이 가능하다.
@@ -58,9 +70,9 @@ shop:
 ### 2-1. 프로퍼티 파일(application.yml)에 spring.profiles.active로 지정한다.    
 ```yaml
 spring:
-profiles:
-active:
-- canshop   # 테스트 환경 선택
+  profiles:
+    active:
+      - qa   # 테스트 환경 선택
 ``` 
 
 ### 2-2. 각 테스트 클래스에 @ActivePrifiles("{프로퍼티그룹명}") 어노테이션으로 지정 가능하다.
