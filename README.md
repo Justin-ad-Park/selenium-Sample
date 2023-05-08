@@ -99,7 +99,7 @@ public class TAMemberLogin extends SeleniumSupporter {
 ```yaml
 shop:
   front-url: "https://canshop.pulmuone.online/"
-  etcvalue: 123,456,789
+  values: 123,456,789
 ```
 ```java
 public class ZetcTest extends SeleniumSupporter {
@@ -119,11 +119,11 @@ public class ZetcTest extends SeleniumSupporter {
 * static 변수에 배열을 바인딩 시키는 방법
     - 배열은 문자열이면 List<String>, 정수면 List<Integer>로 선언한다.
 ```java
-    public static List<Integer> ETC_TEST_VALUE;
+    public static List<Integer> VALUES;
 
-    @Value("${shop.etcvalue}")
-    public void setEtcTestValue(List<Integer> value) {
-        ETC_TEST_VALUE = value;
+    @Value("${shop.values}")
+    public void setValues(List<Integer> values) {
+        VALUES = values;
     }
 ```
 

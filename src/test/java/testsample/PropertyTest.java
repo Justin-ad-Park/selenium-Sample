@@ -27,19 +27,19 @@ public class PropertyTest {
         SHOP_FRONT_URL = value;
     }
 
-    public static List<Integer> ETC_TEST_VALUE;
+    public static List<Integer> VALUES;
 
-    @Value("${shop.etcvalue}")
-    public void setEtcTestValue(List<Integer> value) {
-        ETC_TEST_VALUE = value;
+    @Value("${shop.values}")
+    public void setValues(List<Integer> values) {
+        VALUES = values;
     }
 
     @Test
     void Test() {
-        List<Integer> etcValue = environment.getProperty("shop.etcvalue", List.class);
+        List<Integer> values = environment.getProperty("shop.values", List.class);
 
-        System.out.println(etcValue);
-        System.out.println(ETC_TEST_VALUE);
+        System.out.println(values);
+        System.out.println(VALUES);
 
         String qapwd = System.getenv("QAPWD");
 

@@ -39,7 +39,7 @@ spring:
       on-profile: "qashop"
 shop:
   front-url: "https://qashop.pulmuone.online/"
-  etcvalue: 123,456,789
+  values: 123,456,789
 
 --- #canshop 설정
 spring:
@@ -48,7 +48,7 @@ spring:
       on-profile: "canshop"
 shop:
   front-url: "https://canshop.pulmuone.online/"
-  etcvalue: 123,456,789
+  values: 123,456,789
 #  sql:
 #    init:
 #      mode: always
