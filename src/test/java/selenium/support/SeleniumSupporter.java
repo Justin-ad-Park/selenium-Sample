@@ -92,7 +92,14 @@ public class SeleniumSupporter {
     private static void clickDoNotShowTodayButton() {
         CHECK_MAIN_POPUP = false;    //이후 테스트부터는 메인 팝업을 확인하지 않는다.
 
-        WebElement doNotShowButton = findElementAfterWait(By.cssSelector(".notice__btn__today"));
+        WebElement doNotShowButton = null;
+
+        try {
+            doNotShowButton = findElementAfterWait(By.cssSelector(".notice__btn__today"));
+        } catch (TimeoutException e) {
+            //donothing
+        }
+
         //팝업이 있으면, 오늘 하루 보지 않음 버튼 클릭
         if(doNotShowButton != null) {
             doNotShowButton.click();
