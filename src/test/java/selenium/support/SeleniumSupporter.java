@@ -3,14 +3,14 @@ package selenium.support;
 import com.google.common.base.Stopwatch;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.MethodOrderer;
+import org.junit.jupiter.api.TestMethodOrder;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.ActiveProfiles;
 import selenium.SeleniumApplication;
 
 import java.time.Duration;
@@ -21,7 +21,7 @@ import java.util.concurrent.TimeUnit;
 
 //@ActiveProfiles("qa")
 @SpringBootTest(classes = {SeleniumApplication.class} )
-@EnableAutoConfiguration
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class SeleniumSupporter {
     public static String SHOP_FRONT_URL;
 

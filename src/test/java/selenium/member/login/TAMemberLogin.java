@@ -8,10 +8,6 @@ import org.springframework.test.context.ActiveProfiles;
 import selenium.SeleniumApplication;
 import selenium.support.SeleniumSupporter;
 
-@ActiveProfiles("qa")
-@SpringBootTest(classes = SeleniumApplication.class)
-@EnableAutoConfiguration
-@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class TAMemberLogin extends SeleniumSupporter {
 
     public void QALogout() {

@@ -13,9 +13,7 @@ import selenium.SeleniumApplication;
 import selenium.member.login.TAMemberLogin;
 import selenium.support.SeleniumSupporter;
 
-@ActiveProfiles("qa")
-@SpringBootTest(classes = SeleniumApplication.class)
-@EnableAutoConfiguration
+//@ActiveProfiles("qa")
 public class TMSearch extends SeleniumSupporter {
 
     public static void qASearch(String searchText) {

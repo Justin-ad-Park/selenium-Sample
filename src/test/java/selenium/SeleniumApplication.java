@@ -1,10 +1,11 @@
 package selenium;
 
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.context.properties.ConfigurationPropertiesScan;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.ActiveProfiles;
 
-@ActiveProfiles("canary")
+//@ActiveProfiles("canary")
+@ConfigurationPropertiesScan("selenium")
 @SpringBootTest
 public class SeleniumApplication {
 
