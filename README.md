@@ -28,9 +28,13 @@ https://justinadpark.tistory.com/173
 ## git 사용 방법
 ### 클론 : 원격 저장소를 로컬에 복제해오는 명령
     git clone 원격_저장소_경로
+
 ### 브랜치 생성
     git branch feature/{id}_yymmdd
     git checkout feature/{id}_yymmdd
+
+### 브랜치 삭제 
+    git branch feature/{브랜치명} -d
 
 ### 신규 브랜치에서 원격 저장소를 연결하는 방법
 git push --set-upstream selenium-sample feature/justin_230509
@@ -45,10 +49,16 @@ git push --set-upstream selenium-sample feature/justin_230509
     git commit -m "주석"  //로컬에 수정한 소스 커밋
     git push        //원격 저장소에 git 반영
 
+### 수정한 소스 작업 전으로 원복(주의 되돌리지 못함)
+git reset --hard
+
 ### master에 PR(Pull Request) 요청 방법
 + https://github.com/Justin-ad-Park/selenium-Sample/
 + [Pull requests] 탭 클릭
-    
++ [New Pull Request] 버튼 클릭 (우측 상단)
++ base: Pull 대상
++ compare : 수정한 소스가 있는 브랜치 (보통 feature 브랜치)
+
 
 # Selenium 개발 방법
 ## 1. 프로퍼티를 등록하는 방법
