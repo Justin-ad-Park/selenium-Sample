@@ -13,16 +13,23 @@ https://justinadpark.tistory.com/173
 
 ### 4. 본 프로젝트를 각자 PC에 clone(복제) 
 + windows 기준
-    - 프로젝트를 관리할 폴더 생성
+    - 개인 업무용(개발용) PC에 프로젝트를 관리할 폴더 생성
     - Windows + R 엔터
     - cmd 엔터
     - cd {위에서 만든 폴더}
+    - 폴더 변경 확인 : 만약 C: 드라이브가 아닌 다른 드라이브에 폴더를 만들었으면 해당 드라이브로 이동
+      예) d: 엔터
     - clone https://github.com/Justin-ad-Park/selenium-Sample.git
 
 ### 5. QAPWD를 시스템 환경설정에 추가 
     + 추가 방법은 path 설정 방식과 동일
     + QAPWD 변수값에 비밀번호 등록
 
+## git 사용 방법
+### 클론 : 원격 저장소를 로컬에 복제해오는 명령
+    git clone 원격_저장소_경로
+### 브랜치 생성
+    
 
 # Selenium 개발 방법
 ## 1. 프로퍼티를 등록하는 방법
