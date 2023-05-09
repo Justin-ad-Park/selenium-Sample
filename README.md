@@ -56,9 +56,24 @@ git reset --hard
 + https://github.com/Justin-ad-Park/selenium-Sample/
 + [Pull requests] 탭 클릭
 + [New Pull Request] 버튼 클릭 (우측 상단)
-+ base: Pull 대상
-+ compare : 수정한 소스가 있는 브랜치 (보통 feature 브랜치)
++ base, comare 선택
+    - base: Pull 대상, 보통 master 브랜치 선택
+    - compare : 수정한 소스가 있는 브랜치 (보통 feature 브랜치)
++ [Create pull request] 버튼 클릭
++ 내용 입력 
+    - 제목, 본문 리뷰어가 어떤 소스를 반영하는지 이해하기 쉽도록 입력
++ [Create pull request] 버튼 클릭
 
+### PR 리뷰 및 머지 
++ 2명 이상이 머지를 승인해야 머지 가능
++ Master에 머지된 소스는 각 개별 feature 브랜치에는 반영되지 않음
+
+
+### Merge : Master(또는 다른 브랜치)에 반영된 소스를 내 브랜치에 반영하는 방법
++ 현재 브랜치는 내 브랜치에서 시작
++ Master 브랜치 소스를 머지(가져오기) 하려면
+git merge master
+  
 
 # Selenium 개발 방법
 ## 1. 프로퍼티를 등록하는 방법
