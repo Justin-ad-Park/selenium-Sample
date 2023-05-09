@@ -45,7 +45,9 @@ git push --set-upstream selenium-sample feature/justin_230509
     git commit -m "주석"  //로컬에 수정한 소스 커밋
     git push        //원격 저장소에 git 반영
 
-
+### master에 PR(Pull Request) 요청 방법
++ https://github.com/Justin-ad-Park/selenium-Sample/
++ [Pull requests] 탭 클릭
     
 
 # Selenium 개발 방법
