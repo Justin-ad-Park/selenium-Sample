@@ -29,6 +29,23 @@ https://justinadpark.tistory.com/173
 ### 클론 : 원격 저장소를 로컬에 복제해오는 명령
     git clone 원격_저장소_경로
 ### 브랜치 생성
+    git branch feature/{id}_yymmdd
+    git checkout feature/{id}_yymmdd
+
+### 신규 브랜치에서 원격 저장소를 연결하는 방법
+git push --set-upstream selenium-sample feature/justin_230509
+
+
+### git 상태 확인(수정된 소스 확인)
+    git status 
+
+### 수정한 소스 로컬 반영
+    git add .       //수정한 전체 소스 반영
+    git add 파일명     //지정한 소스만 반영
+    git commit -m "주석"  //로컬에 수정한 소스 커밋
+    git push        //원격 저장소에 git 반영
+
+
     
 
 # Selenium 개발 방법
