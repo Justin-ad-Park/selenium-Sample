@@ -24,6 +24,9 @@ https://justinadpark.tistory.com/173
 ### 5. QAPWD를 시스템 환경설정에 추가 
     + 추가 방법은 path 설정 방식과 동일
     + QAPWD 변수값에 비밀번호 등록
+    + 환경 변수 확인(터미널, 또는 커맨드 쉘에서)
+        * Mac : echo $QAPWD
+        * Windows : echo %QAPWD%
 
 ## git 사용 방법
 ### 클론 : 원격 저장소를 로컬에 복제해오는 명령
