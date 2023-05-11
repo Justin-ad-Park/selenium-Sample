@@ -6,14 +6,10 @@ import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.ActiveProfiles;
-import selenium.SeleniumApplication;
 import selenium.member.login.TAMemberLogin;
 import selenium.support.SeleniumSupporter;
 
-//@ActiveProfiles("qa")
+// @ActiveProfiles("qa")
 public class TMSearch extends SeleniumSupporter {
 
     public static void qASearch(String searchText) {
