@@ -16,11 +16,6 @@ spring:
     activate:
       on-profile: "common"
 
-pmoredis:
-  first:
-    port: 9003
-
-
 shop:
   values: 123,456,789
 #  jpa:
